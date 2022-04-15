@@ -2,6 +2,9 @@ import styled from "styled-components";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import { ArrowProps } from "../../types/types";
+import { useState } from "react";
+import SingleSlide from "./SingleSlide";
+import { sliderItems } from "../../sliderItems";
 
 const Container = styled.div`
   width: 100%;
@@ -24,68 +27,40 @@ const Arrow = styled.div<ArrowProps>`
   margin: auto;
   cursor: pointer;
   opacity: 0.5;
+  z-index: 2;
   left: ${(props) => (props.side === "left" ? "10px" : "auto")};
   right: ${(props) => (props.side === "right" ? "10px" : "auto")};
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<ArrowProps>`
   height: 100%;
-`;
-
-const Slide = styled.div`
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  align-items: center;
+  transform: translateX(${(props) => props.slide! * -100}vw);
+  transition: all 1.5s ease;
 `;
-
-const ImageContainer = styled.div`
-  flex: 1;
-  height: 100%;
-`;
-
-const Img = styled.img`
-  height: 80%;
-`;
-const Information = styled.div`
-  flex: 1;
-  padding: 50px;
-`;
-
-const Title = styled.h1`
-  font-size: 70px;
-`;
-
-const Description = styled.p`
-  margin: 50px 0px;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 3px;
-`;
-
-const Button = styled.button``;
 
 const Slider = () => {
+  const [slide, setSlide] = useState(0);
+
+  const handleClick = (direction: string) => {
+    if (direction === "left") {
+      setSlide(slide > 0 ? slide - 1 : 2);
+    } else {
+      setSlide(slide < 2 ? slide + 1 : 0);
+    }
+  };
+
   return (
     <Container>
-      <Arrow side="left">
+      <Arrow side="left" onClick={() => handleClick("left")}>
         <ArrowBackIosNewOutlinedIcon />
       </Arrow>
-      <Wrapper>
-        <Slide>
-          <ImageContainer>
-            <Img src="assets/img1.PNG" />
-          </ImageContainer>
-          <Information>
-            <Title>Discover Your Brands</Title>
-            <Description>
-              Where would you like to start? Women Men Kids
-            </Description>
-            <Button>Shop Now</Button>
-          </Information>
-        </Slide>
+      <Wrapper slide={slide}>
+        {sliderItems.map((item) => (
+          <SingleSlide key={item.id} item={item} />
+        ))}
       </Wrapper>
-      <Arrow side="right">
+      <Arrow side="right" onClick={() => handleClick("right")}>
         <ArrowForwardIosOutlinedIcon />
       </Arrow>
     </Container>
