@@ -11,3 +11,9 @@ export type sliderItem = {
   desc: string;
   bg: string;
 };
+
+export type category = {
+  id: number;
+  img: string;
+  title: string;
+};

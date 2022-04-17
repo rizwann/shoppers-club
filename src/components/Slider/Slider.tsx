@@ -4,7 +4,7 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import { ArrowProps } from "../../types/types";
 import { useState } from "react";
 import SingleSlide from "./SingleSlide";
-import { sliderItems } from "../../sliderItems";
+import { sliderItems } from "../../fakeData";
 
 const Container = styled.div`
   width: 100%;
