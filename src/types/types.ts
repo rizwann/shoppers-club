@@ -7,9 +7,9 @@ export interface ArrowProps {
 export type sliderItem = {
   id: number;
   img: string;
-  title: string;
-  desc: string;
-  bg: string;
+  title?: string;
+  desc?: string;
+  bg?: string;
 };
 
 export type category = {
