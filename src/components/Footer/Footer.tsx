@@ -4,7 +4,6 @@ import {
   Instagram,
   LinkedIn,
   MailLockOutlined,
-  Map,
   PhoneAndroid,
   RoomOutlined,
   Twitter,
