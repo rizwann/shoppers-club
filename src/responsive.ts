@@ -20,3 +20,11 @@ export const mobile = (props: CSSObject) => {
     }
   `;
 };
+
+export const largeTablets = (props: CSSObject) => {
+  return css`
+    @media only screen and (max-width: 390px) {
+      ${props}
+    }
+  `;
+};
