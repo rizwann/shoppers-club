@@ -37,7 +37,10 @@ const Input = styled.input`
   margin: 20px 10px 0 0;
   padding: 10px;
 `;
-
+const Bottom = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 const Agreement = styled.span`
   font-size: 11px;
   margin: 20px 0;
@@ -49,6 +52,7 @@ const Button = styled.button`
   padding: 15px 20px;
   color: white;
   background-color: #066b8f;
+  cursor: pointer;
 `;
 
 const Register = () => {
@@ -63,11 +67,13 @@ const Register = () => {
           <Input type="text" placeholder="Email" />
           <Input type="text" placeholder="Password" />
           <Input type="text" placeholder="Confirm password" />
-          <Agreement>
-            By Creating an account you agree to our <b>Terms of Use</b> and{" "}
-            <b>Privacy Policy</b>
-          </Agreement>
-          <Button>Register</Button>
+          <Bottom>
+            <Agreement>
+              By Creating an account you agree to our <b>Terms of Use</b> and{" "}
+              <b>Privacy Policy</b>
+            </Agreement>
+            <Button>Register</Button>
+          </Bottom>
         </Form>
       </Wrapper>
     </Container>
