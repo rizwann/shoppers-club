@@ -1,5 +1,6 @@
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 const Container = styled.div`
   display: flex;
@@ -10,14 +11,16 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h1`
-  font-size: 70px;
+  font-size: 4.5rem;
   margin-bottom: 20px;
+  ${mobile({ fontSize: "2.5rem" })}
 `;
 
 const Description = styled.div`
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: 300;
+  ${mobile({ textAlign: "center" })}
 `;
 
 const InputContainer = styled.div`
@@ -28,6 +31,7 @@ const InputContainer = styled.div`
   justify-content: space-between;
   border: 1px solid lightgrey;
   gap: 10px;
+  ${mobile({ width: "80%" })}
 `;
 
 const Input = styled.input`

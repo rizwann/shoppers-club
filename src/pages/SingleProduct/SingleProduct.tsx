@@ -4,6 +4,7 @@ import Banner from "../../components/Banner/Banner";
 import CustomerOfffers from "../../components/CustomerOfffers/CustomerOfffers";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { mobile } from "../../responsive";
 import { ArrowProps } from "../../types/types";
 
 const Container = styled.div``;
@@ -11,6 +12,7 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   display: flex;
   padding: 50px;
+  ${mobile({ flexDirection: "column", padding: "10px" })}
 `;
 
 const ImgContainer = styled.div`
@@ -20,12 +22,15 @@ const ImgContainer = styled.div`
 const Img = styled.img`
   width: 100%;
   height: 90vh;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #eaeaea;
+  ${mobile({ height: "60vh", backgroundColor: "#fdeaf9" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -47,6 +52,7 @@ const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 30px 0px;
+  ${mobile({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -80,6 +86,7 @@ const ChoiceContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({ width: "100%" })}
 `;
 
 const ItemAmountContainer = styled.div`

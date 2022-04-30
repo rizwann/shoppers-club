@@ -8,8 +8,8 @@ import SingleProduct from "./pages/SingleProduct/SingleProduct";
 function App() {
   return (
     <div className="App">
-      <Home />
-      {/* <ProductList /> */}
+      {/* <Home /> */}
+      <ProductList />
       {/* <SingleProduct /> */}
       {/* <Login /> */}
       {/* <Cart /> */}

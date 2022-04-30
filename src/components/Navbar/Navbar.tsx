@@ -49,9 +49,17 @@ const Center = styled.div`
   flex: 1;
   text-align: center;
 `;
-const Logo = styled.h1`
+const LogoText = styled.h1`
   font-weight: bold;
-  ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+  ${mobile({ display: "none" })}
+`;
+
+const Logo = styled.img`
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  display: none;
+  ${mobile({ display: "block" })}
 `;
 const Right = styled.div`
   flex: 1;
@@ -64,7 +72,7 @@ const Right = styled.div`
 const MenuList = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-right: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -80,7 +88,8 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Shoppers Club</Logo>
+          <LogoText>Shoppers Club</LogoText>
+          <Logo src="assets/logo.PNG" />
         </Center>
         <Right>
           <MenuList>Register</MenuList>
