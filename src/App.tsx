@@ -8,11 +8,11 @@ import SingleProduct from "./pages/SingleProduct/SingleProduct";
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
+      <Home />
       {/* <ProductList /> */}
       {/* <SingleProduct /> */}
       {/* <Login /> */}
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 }

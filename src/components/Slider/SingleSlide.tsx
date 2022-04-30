@@ -9,24 +9,24 @@ const Slide = styled.div<ArrowProps>`
   background-color: #${(props) => props.color};
 `;
 
-const ImageContainer = styled.div`
-  flex: 1;
+const ImgContainer = styled.div`
   height: 100%;
+  flex: 1;
 `;
 
-const Img = styled.img`
+const Image = styled.img`
   height: 80%;
 `;
-const Information = styled.div`
+
+const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
 `;
-
 const Title = styled.h1`
   font-size: 70px;
 `;
 
-const Description = styled.p`
+const Desc = styled.p`
   margin: 50px 0px;
   font-size: 20px;
   font-weight: 500;
@@ -34,27 +34,23 @@ const Description = styled.p`
 `;
 
 const Button = styled.button`
-  padding: 8px;
+  padding: 10px;
   font-size: 20px;
   background-color: transparent;
-
   cursor: pointer;
-  &:hover {
-    background-color: #c2ce39;
-  }
 `;
 
 const SingleSlide = ({ item }: { item: sliderItem }) => {
   return (
-    <Slide color={item.bg}>
-      <ImageContainer>
-        <Img src={item.img} />
-      </ImageContainer>
-      <Information>
+    <Slide color={item.bg} key={item.id}>
+      <ImgContainer>
+        <Image src={item.img} />
+      </ImgContainer>
+      <InfoContainer>
         <Title>{item.title}</Title>
-        <Description>{item.desc}</Description>
-        <Button>Shop Now</Button>
-      </Information>
+        <Desc>{item.desc}</Desc>
+        <Button>SHOW NOW</Button>
+      </InfoContainer>
     </Slide>
   );
 };
