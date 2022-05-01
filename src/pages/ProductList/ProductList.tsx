@@ -7,6 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import Products from "../../components/Products/Products";
 import { mobile } from "../../responsive";
+import { filters } from "../../types/types";
 
 const Container = styled.div``;
 
@@ -40,16 +41,15 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
-  const catName = useParams();
+  const { category } = useParams();
 
-  const [filters, setFilters] = useState({ Color: "", Size: "" });
+  const [filters, setFilters] = useState({ color: "", size: "" });
   const [sort, setSort] = useState("newest");
 
   const handleFilters = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
     setFilters({ ...filters, [e.target.name]: value });
   };
-  console.log(filters);
 
   return (
     <Container>
@@ -59,7 +59,7 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Items: </FilterText>
-          <Select name="Color" onChange={handleFilters}>
+          <Select name="color" onChange={handleFilters}>
             <Option disabled>Select Color</Option>
             <Option>Red</Option>
             <Option>Blue</Option>
@@ -68,7 +68,7 @@ const ProductList = () => {
             <Option>Black</Option>
             <Option>White</Option>
           </Select>
-          <Select name="Size" onChange={handleFilters}>
+          <Select name="size" onChange={handleFilters}>
             <Option disabled>Select Size</Option>
             <Option>XS</Option>
             <Option>S</Option>
@@ -88,7 +88,7 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-      <Products cat={catName.category} filters={filters} sort={sort} />
+      <Products cat={category} filters={filters} sort={sort} />
       <CustomerOfffers />
       <Footer />
     </Container>
