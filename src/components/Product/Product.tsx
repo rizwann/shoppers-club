@@ -3,7 +3,7 @@ import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
-import { sliderItem } from "../../types/types";
+import { SingleProduct } from "../../types/types";
 
 const Information = styled.div`
   width: 100%;
@@ -67,11 +67,11 @@ const Icon = styled.div`
   }
 `;
 
-const Product = ({ item }: { item: sliderItem }) => {
+const Product = ({ item }: { item: SingleProduct }) => {
   return (
     <Container>
       <Circle />
-      <Img src={item.img} alt={"productImg"} />
+      <Img src={item.image} alt={"productImg"} />
       <Information>
         <Icon>
           <ShoppingCartOutlinedIcon />

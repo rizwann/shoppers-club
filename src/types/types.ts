@@ -20,6 +20,24 @@ export type sliderItem = {
 export type category = {
   id: number;
   img: string;
-  title: string;
-  category: string;
+  title?: string;
+  name?: string;
+};
+
+export type SingleProduct = {
+  _id: string;
+  categories: [];
+  size: string[];
+  color: string[];
+  inStock?: boolean;
+  price: number;
+  name: string;
+  image: string;
+  desc?: string;
+};
+
+export type filters = {
+  category?: string;
+  size?: string;
+  color?: string;
 };
